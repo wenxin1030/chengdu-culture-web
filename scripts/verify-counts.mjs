@@ -1,0 +1,26 @@
+import { readFileSync } from 'node:fs'
+const count = (file, prefix) => {
+  const txt = readFileSync(file, 'utf8')
+  const start = txt.indexOf(prefix)
+  const body = txt.slice(start)
+  const end = body.indexOf('\n]')
+  const seg = end === -1 ? body : body.slice(0, end)
+  return (seg.match(/id: '/g) || []).length
+}
+console.log('scenicSpots:', count('src/data/scenic.ts', 'export const scenicSpots'))
+console.log('foods:', count('src/data/food.ts', 'export const foods'))
+console.log('cultureEvents:', count('src/data/culture.ts', 'export const cultureEvents'))
+console.log('guides:', count('src/data/guides.ts', 'export const guides'))
+console.log('cityServices:', count('src/data/services.ts', 'export const cityServices'))
+console.log('faqItems:', count('src/data/faq.ts', 'export const faqItems'))
+console.log('suggestedQuestions:', count('src/data/faq.ts', 'export const suggestedQuestions'))
+console.log('metroLines:', count('src/data/traffic.ts', 'export const metroLines'))
+console.log('trafficRoutes:', count('src/data/traffic.ts', 'export const trafficRoutes'))
+const hot = readFileSync('src/data/services.ts','utf8')
+const hotStart = hot.indexOf('export const hotlines')
+console.log('hotlines:', (hot.slice(hotStart).match(/label:/g) || []).length)
+const lastMile = readFileSync('src/data/traffic.ts','utf8')
+const lm = lastMile.indexOf('export const lastMile')
+console.log('lastMile:', (lastMile.slice(lm).match(/spot:/g) || []).length)
+const city = readFileSync('src/data/city.ts','utf8')
+console.log('timeline nodes:', (city.slice(city.indexOf('export const timeline')).match(/year:/g)||[]).length)

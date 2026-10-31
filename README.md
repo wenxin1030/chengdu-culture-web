@@ -15,7 +15,7 @@
 | --- | --- | --- |
 | 框架 | Vue 3.5（Composition API + `<script setup>`） | 单文件组件、响应式、`defineModel` |
 | 构建 | Vite 6 + TypeScript 5.7 | 开发态毫秒级热更新，生产态 Rollup 分包 |
-| 路由 | Vue Router 4（history 模式） | 16 条路由全部动态 import 懒加载 |
+| 路由 | Vue Router 4（history 模式） | 14 条路由全部动态 import 懒加载 |
 | 状态 | Pinia 2 | `app`（主题/收藏/搜索历史）、`weather`、`chat` |
 | 样式 | 原生 CSS + 设计令牌 | 两层变量（调色板 → 语义 token → 组件别名），零 UI 框架依赖 |
 | 测试 | Vitest 2 + @vue/test-utils | 44 条单元断言 |
@@ -68,7 +68,7 @@ city-web/
 │  │  ├─ images.ts             # 资源注册表（带 hash 指纹）
 │  │  └─ styles/               # tokens / aliases / base / utilities
 │  ├─ components/
-│  │  ├─ common/               # 卡片、轮播、天气、搜索面板、问答、筛选栏等 14 个
+│  │  ├─ common/               # 卡片、轮播、天气、搜索面板、问答、筛选栏等 13 个
 │  │  ├─ cards/                # 景区 / 美食 / 活动 / 攻略 / 服务卡片
 │  │  └─ layout/               # 页眉、页脚、边栏导航、内页横幅
 │  ├─ composables/             # useSeo / useScrollReveal / useCountUp / useGlobalSearch 等
@@ -77,7 +77,7 @@ city-web/
 │  ├─ stores/                  # Pinia：app / weather / chat
 │  ├─ types/                   # 领域模型
 │  ├─ utils/                   # 格式化、搜索打分、天气映射、推荐算法、SEO
-│  ├─ views/                   # 13 个页面组件
+│  ├─ views/                   # 14 个页面组件
 │  ├─ App.vue
 │  └─ main.ts
 ├─ tests/
@@ -100,11 +100,11 @@ city-web/
 | 游记攻略 | `/guides` | 6 篇攻略、标签/天数筛选、人气/最新/预算排序、分段路线正文 |
 | 特色美食 | `/food` | 11 种美食、辣度/场景筛选、辣度可视化、详情页推荐店铺 |
 | 城市服务 | `/service` | 12 项服务入口、四类分组、服务热线、实时天气 |
-| 交通路线 | `/traffic` | 5 类出行方式、8 条地铁线网、景点最后一公里换乘表 |
+| 交通路线 | `/traffic` | 5 类出行方式、7 条地铁线网、景点最后一公里换乘表 |
 
 **智能化能力**
 
-1. **智能问答**：16 条本地知识库 + 关键词加权匹配 + 中文二元组相似度，回答未命中时有兜底引导；支持推荐问题、打字动画、跳转详情。
+1. **智能问答**：15 条本地知识库 + 关键词加权匹配 + 中文二元组相似度，回答未命中时有兜底引导；支持推荐问题、打字动画、跳转详情。
 2. **全站智能搜索**：标题/标签/摘要/正文四级加权，中文二元组部分召回，结果按相关度排序并高亮命中词，支持 `/` 快捷键、历史与热词。
 3. **智能推荐**：标签重合度 + 季节权重 + 热度排序，在景区/美食/攻略详情页给出「猜你也想去」。
 

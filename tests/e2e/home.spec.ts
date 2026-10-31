@@ -7,10 +7,10 @@ test.describe('宣传主页', () => {
 
   test('首屏展示主视觉、导航与实时天气', async ({ page }) => {
     await expect(page.locator('.carousel h1').first()).toContainText('天府')
-    // 桌面端显示主导航，移动端收起为汉堡菜单
-    const nav = page.getByRole('navigation', { name: '主导航' })
-    const burger = page.getByRole('button', { name: '打开导航菜单' })
-    await expect(nav.or(burger)).toBeVisible()
+    // 桌面端显示主导航，移动端收起为汉堡菜单，二者必有其一
+    const navVisible = await page.getByRole('navigation', { name: '主导航' }).isVisible()
+    const burgerVisible = await page.getByRole('button', { name: '打开导航菜单' }).isVisible()
+    expect(navVisible || burgerVisible).toBeTruthy()
     // 页眉辅助功能区：实时天气胶囊
     await expect(page.locator('.weather-pill')).toBeVisible()
   })

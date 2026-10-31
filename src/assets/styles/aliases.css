@@ -1,0 +1,107 @@
+/* ============================================================
+ * 组件层变量别名
+ * ------------------------------------------------------------
+ * tokens.css 采用「调色板 c-* + 语义 token」两层命名，
+ * 组件中为书写直观另起了一套 --color-* / --space-* / --radius-* / --shadow-* 命名。
+ * 本文件只做映射，不改动任何取值来源：
+ *   · 需要随深浅色主题翻转的，映射到语义 token（--bg-* / --text-* / --brand / --accent / --gold）
+ *   · 作为固定色阶使用的，直接映射到调色板（--c-*）
+ * 好处：主题、间距、圆角、阴影只需在 tokens.css 维护一份。
+ * ============================================================ */
+
+:root {
+  /* ---------- 品牌色（竹青） ---------- */
+  --color-brand-50: var(--brand-soft);
+  --color-brand-100: var(--c-bamboo-100);
+  --color-brand-200: var(--c-bamboo-200);
+  --color-brand-300: var(--c-bamboo-300);
+  --color-brand-400: var(--c-bamboo-400);
+  --color-brand-500: var(--c-bamboo-500);
+  --color-brand-600: var(--brand);
+  --color-brand-700: var(--brand-strong);
+  --color-brand-800: var(--c-bamboo-800);
+  --color-brand-900: var(--c-bamboo-900);
+
+  /* ---------- 银杏金 ---------- */
+  --color-gold-200: var(--c-gold-200);
+  --color-gold-300: var(--c-gold-300);
+  --color-gold-400: var(--c-gold-400);
+  --color-gold-500: var(--gold);
+  --color-gold-600: var(--c-gold-600);
+  --color-gold-700: var(--c-gold-600);
+
+  /* ---------- 川剧朱砂 ---------- */
+  --color-cinnabar-400: var(--c-cinnabar-500);
+  --color-cinnabar-500: var(--accent);
+  --color-cinnabar-600: var(--c-cinnabar-600);
+  --color-cinnabar-700: var(--c-cinnabar-700);
+
+  /* ---------- 墨色与宣纸 ---------- */
+  --color-ink-900: var(--c-ink-900);
+  --color-ink-800: var(--c-ink-800);
+  --color-ink-700: var(--c-ink-700);
+  --color-ink-500: var(--c-ink-500);
+  --color-ink-100: var(--c-ink-100);
+  --color-paper-50: var(--c-paper);
+  --color-paper-100: var(--c-paper-deep);
+
+  /* ---------- 语义：背景 / 文字 / 描边 ---------- */
+  --color-bg: var(--bg-page);
+  --color-surface: var(--bg-elevated);
+  --color-surface-alt: var(--bg-muted);
+  --color-text: var(--text-primary);
+  --color-text-strong: var(--text-primary);
+  --color-text-muted: var(--text-secondary);
+  --color-text-faint: var(--text-tertiary);
+  --color-border: var(--border-subtle);
+  --color-border-strong: var(--border-strong);
+  --color-focus: var(--brand);
+
+  /* ---------- 间距（8pt 栅格） ---------- */
+  --space-1: var(--sp-1);
+  --space-2: var(--sp-2);
+  --space-3: var(--sp-3);
+  --space-4: var(--sp-4);
+  --space-5: var(--sp-5);
+  --space-6: var(--sp-6);
+  --space-7: var(--sp-7);
+  --space-8: var(--sp-8);
+  --space-9: var(--sp-9);
+  --space-10: 3.5rem;
+  --space-11: 4rem;
+  --space-12: 4.5rem;
+
+  /* ---------- 圆角 ---------- */
+  --radius-sm: var(--r-sm);
+  --radius-md: var(--r-md);
+  --radius-lg: var(--r-lg);
+  --radius-xl: var(--r-xl);
+  --radius-full: var(--r-full);
+
+  /* ---------- 阴影 ---------- */
+  --shadow-sm: var(--sh-sm);
+  --shadow-md: var(--sh-md);
+  --shadow-lg: var(--sh-lg);
+  --shadow-xl: 0 32px 64px -24px rgba(12, 32, 27, 0.35);
+
+  /* ---------- 动效 ---------- */
+  --dur-sm: var(--dur-fast);
+  --dur-md: var(--dur-base);
+  --dur-lg: var(--dur-slow);
+
+  /* ---------- 层级 ---------- */
+  --z-float: 60;
+}
+
+/* ------------------------------------------------------------
+ * 布局健壮性：grid / flex 子项默认 min-width:auto，
+ * 内部含横向滚动区（如逐小时天气、推荐问题）时会把列宽撑到内容宽度，
+ * 导致移动端出现横向滚动条。这里统一允许收缩。
+ * ------------------------------------------------------------ */
+.grid-3 > *,
+.grid-4 > *,
+.weather-wrap > *,
+.panels > *,
+.section-heading > * {
+  min-width: 0;
+}

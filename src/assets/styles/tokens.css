@@ -1,0 +1,190 @@
+/* ============================================================
+ * 设计令牌（Design Tokens）—— 锦官城 · 成都文化宣传网站
+ * 主题：天府墨韵（川西林盘 / 宣纸 / 竹青 / 银杏金 / 川剧朱砂）
+ * ============================================================ */
+:root {
+  /* ---------- 品牌色 ---------- */
+  --c-bamboo-050: #eef6f2;
+  --c-bamboo-100: #d7ebe2;
+  --c-bamboo-200: #aed6c6;
+  --c-bamboo-300: #7bbaa4;
+  --c-bamboo-400: #4f9a81;
+  --c-bamboo-500: #1f7a63;
+  --c-bamboo-600: #1a6553;
+  --c-bamboo-700: #12403a;
+  --c-bamboo-800: #0d2e2a;
+  --c-bamboo-900: #081e1c;
+
+  --c-gold-050: #fdf7e8;
+  --c-gold-100: #f8ecc9;
+  --c-gold-200: #f0d894;
+  --c-gold-300: #e6c05c;
+  --c-gold-400: #d9a441;
+  --c-gold-500: #bf8730;
+  --c-gold-600: #96681f;
+
+  --c-cinnabar-050: #fdeeec;
+  --c-cinnabar-100: #f8d5d0;
+  --c-cinnabar-300: #dd7f70;
+  --c-cinnabar-500: #b5372c;
+  --c-cinnabar-600: #96291f;
+  --c-cinnabar-700: #711d16;
+
+  --c-ink-900: #141918;
+  --c-ink-800: #1c2422;
+  --c-ink-700: #2a3532;
+  --c-ink-500: #4c5a56;
+  --c-ink-400: #6c7a76;
+  --c-ink-300: #97a39f;
+  --c-ink-200: #c3ccc8;
+  --c-ink-100: #e0e6e3;
+  --c-ink-050: #f1f4f2;
+
+  --c-paper: #f8f4ea;
+  --c-paper-deep: #efe7d6;
+  --c-paper-card: #fffdf8;
+
+  /* ---------- 语义色 ---------- */
+  --bg-page: var(--c-paper);
+  --bg-elevated: var(--c-paper-card);
+  --bg-muted: #f2ece0;
+  --bg-inverse: var(--c-bamboo-800);
+  --text-primary: var(--c-ink-900);
+  --text-secondary: var(--c-ink-500);
+  --text-tertiary: var(--c-ink-400);
+  --text-inverse: #f7f4ec;
+  --border-subtle: rgba(20, 25, 24, 0.09);
+  --border-strong: rgba(20, 25, 24, 0.16);
+  --brand: var(--c-bamboo-600);
+  --brand-strong: var(--c-bamboo-700);
+  --brand-soft: var(--c-bamboo-050);
+  --accent: var(--c-cinnabar-500);
+  --accent-soft: var(--c-cinnabar-050);
+  --gold: var(--c-gold-400);
+  --gold-soft: var(--c-gold-050);
+  --focus-ring: 0 0 0 3px rgba(31, 122, 99, 0.35);
+
+  /* ---------- 字体 ---------- */
+  --font-sans: 'PingFang SC', 'HarmonyOS Sans SC', 'Microsoft YaHei', 'Noto Sans SC',
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  --font-serif: 'Songti SC', 'STSong', 'Source Han Serif SC', 'Noto Serif SC', 'SimSun', Georgia,
+    'Times New Roman', serif;
+  --font-mono: 'SFMono-Regular', 'JetBrains Mono', Consolas, 'Liberation Mono', monospace;
+
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.8125rem;
+  --fs-base: 0.9375rem;
+  --fs-md: 1rem;
+  --fs-lg: 1.125rem;
+  --fs-xl: 1.375rem;
+  --fs-2xl: 1.75rem;
+  --fs-3xl: 2.25rem;
+  --fs-4xl: 3rem;
+  --fs-5xl: 3.75rem;
+
+  --lh-tight: 1.2;
+  --lh-snug: 1.45;
+  --lh-normal: 1.7;
+  --lh-loose: 1.9;
+
+  /* ---------- 间距（8pt 栅格） ---------- */
+  --sp-1: 0.25rem;
+  --sp-2: 0.5rem;
+  --sp-3: 0.75rem;
+  --sp-4: 1rem;
+  --sp-5: 1.5rem;
+  --sp-6: 2rem;
+  --sp-7: 3rem;
+  --sp-8: 4rem;
+  --sp-9: 6rem;
+
+  /* ---------- 圆角 ---------- */
+  --r-xs: 4px;
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 18px;
+  --r-xl: 28px;
+  --r-full: 999px;
+
+  /* ---------- 阴影 ---------- */
+  --sh-xs: 0 1px 2px rgba(20, 25, 24, 0.05);
+  --sh-sm: 0 2px 8px rgba(20, 25, 24, 0.06), 0 1px 2px rgba(20, 25, 24, 0.04);
+  --sh-md: 0 8px 24px -6px rgba(20, 25, 24, 0.12), 0 2px 6px rgba(20, 25, 24, 0.05);
+  --sh-lg: 0 24px 48px -16px rgba(13, 46, 42, 0.22), 0 8px 18px -10px rgba(13, 46, 42, 0.14);
+  --sh-inset: inset 0 1px 0 rgba(255, 255, 255, 0.5);
+
+  /* ---------- 层级 ---------- */
+  --z-base: 0;
+  --z-sticky: 100;
+  --z-header: 200;
+  --z-sidenav: 300;
+  --z-overlay: 400;
+  --z-modal: 500;
+  --z-toast: 600;
+
+  /* ---------- 动效 ---------- */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --dur-fast: 140ms;
+  --dur-base: 240ms;
+  --dur-slow: 480ms;
+
+  /* ---------- 布局 ---------- */
+  --container: 1200px;
+  --container-wide: 1400px;
+  --gutter: clamp(1rem, 4vw, 2.5rem);
+  --header-h: 72px;
+  --header-h-mobile: 60px;
+
+  /* ---------- 字体缩放（辅助功能） ---------- */
+  --font-scale: 1;
+}
+
+/* ---------- 夜间主题：夜锦官 ---------- */
+html[data-theme='dark'] {
+  --bg-page: #0b1b19;
+  --bg-elevated: #112825;
+  --bg-muted: #0f2320;
+  --bg-inverse: var(--c-paper);
+  --text-primary: #f0ede4;
+  --text-secondary: #b6c3be;
+  --text-tertiary: #8a9a94;
+  --text-inverse: #10201d;
+  --border-subtle: rgba(240, 237, 228, 0.12);
+  --border-strong: rgba(240, 237, 228, 0.22);
+  --brand: var(--c-bamboo-300);
+  --brand-strong: var(--c-bamboo-200);
+  --brand-soft: rgba(79, 154, 129, 0.16);
+  --accent: #e0644f;
+  --accent-soft: rgba(224, 100, 79, 0.16);
+  --gold: var(--c-gold-300);
+  --gold-soft: rgba(230, 192, 92, 0.14);
+  --sh-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --sh-md: 0 10px 28px -10px rgba(0, 0, 0, 0.6);
+  --sh-lg: 0 28px 52px -18px rgba(0, 0, 0, 0.7);
+  --sh-inset: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  --focus-ring: 0 0 0 3px rgba(123, 186, 164, 0.45);
+}
+
+/* ---------- 无障碍：减弱动效 ---------- */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-fast: 1ms;
+    --dur-base: 1ms;
+    --dur-slow: 1ms;
+  }
+}
+
+html[data-motion='reduced'] {
+  --dur-fast: 1ms;
+  --dur-base: 1ms;
+  --dur-slow: 1ms;
+}
+
+/* ---------- 高对比度辅助模式 ---------- */
+html[data-contrast='high'] {
+  --border-subtle: rgba(0, 0, 0, 0.45);
+  --border-strong: rgba(0, 0, 0, 0.7);
+  --text-secondary: var(--c-ink-700);
+  --text-tertiary: var(--c-ink-500);
+}

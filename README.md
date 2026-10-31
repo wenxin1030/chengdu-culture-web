@@ -27,6 +27,9 @@
 ## 二、快速开始
 
 ```bash
+# 0. 若本机没有 pnpm，先用 npm 安装（本项目锁定 pnpm 10）
+npm install -g pnpm@10
+
 # 1. 安装依赖（Node.js ≥ 20.19）
 pnpm install
 

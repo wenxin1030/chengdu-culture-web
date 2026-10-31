@@ -24,6 +24,8 @@
 | 审计 | Lighthouse 12 | 性能/可访问性/最佳实践/SEO |
 | 视觉资源 | 程序化生成 SVG（46 张） | 不依赖任何外部图床与字体，离线可用 |
 
+> ⚠️ 所有 pnpm 命令都必须在本目录（`city-web/`）内执行；在工作区根目录执行会得到 `ERR_PNPM_RECURSIVE_EXEC_NO_PACKAGE`（根目录没有 package.json）。
+
 ## 二、快速开始
 
 ```bash
@@ -50,6 +52,11 @@ pnpm preview        # http://127.0.0.1:4173
 
 # 6. Lighthouse 审计（先启动 preview）
 pnpm lighthouse
+
+# 7. 可选：安装 Playwright 自带浏览器（默认用本机 Edge，可跳过）
+pnpm exec playwright install chromium
+# 自检浏览器能否启动（打印版本号）
+node scripts/check-browser.mjs
 ```
 
 > 说明：本机审计使用 `channel: 'msedge'`（无需下载 Chromium）。`scripts/lighthouse.mjs` 会通过 Playwright 启动浏览器并暴露 CDP 端口，审计结果写入 `lighthouse-reports/`。

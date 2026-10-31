@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://chengdu-culture.example.edu/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://chengdu-culture.example.edu/city</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://chengdu-culture.example.edu/culture</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://chengdu-culture.example.edu/scenic</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://chengdu-culture.example.edu/guides</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://chengdu-culture.example.edu/food</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://chengdu-culture.example.edu/service</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://chengdu-culture.example.edu/traffic</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://chengdu-culture.example.edu/search</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+</urlset>

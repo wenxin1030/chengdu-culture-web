@@ -1,0 +1,6 @@
+# 天府成都 · 锦官城文化宣传网
+# 站点为纯静态 SPA，所有页面均允许抓取
+User-agent: *
+Allow: /
+
+Sitemap: https://chengdu-culture.example.edu/sitemap.xml

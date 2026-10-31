@@ -1,0 +1,9 @@
+# pnpm 10 起 overrides 迁移到该文件（package.json 的 pnpm 字段不再读取）
+# 说明：@vue/compiler-core 的 CJS 入口 require('estree-walker')，
+# 而 pnpm 默认提升的是 ESM-only 的 3.x，导致 vite 加载配置时报 ERR_PACKAGE_PATH_NOT_EXPORTED。
+# 这里固定为同时提供 CJS/ESM 的 2.0.2，保证构建链路稳定。
+packages:
+  - '.'
+
+overrides:
+  estree-walker: 2.0.2

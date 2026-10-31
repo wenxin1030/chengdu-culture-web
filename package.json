@@ -1,0 +1,71 @@
+{
+  "name": "chengdu-culture-web",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "成都文化宣传网站 —— 《Web智能化》第二次小组任务",
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "packageManager": "pnpm@10.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "build:only": "vite build",
+    "preview": "vite preview",
+    "typecheck": "vue-tsc --noEmit",
+    "lint": "eslint . --max-warnings 0",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write \"src/**/*.{ts,vue,css}\" \"*.{ts,js,json,md}\"",
+    "format:check": "prettier --check \"src/**/*.{ts,vue,css}\"",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:cov": "vitest run --coverage",
+    "test:e2e": "playwright test",
+    "test:e2e:report": "playwright show-report",
+    "lighthouse": "node scripts/lighthouse.mjs",
+    "prepare": "husky"
+  },
+  "dependencies": {
+    "pinia": "^2.3.1",
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.6.1",
+    "@commitlint/config-conventional": "^19.6.0",
+    "@eslint/js": "^9.18.0",
+    "@playwright/test": "^1.49.1",
+    "@resvg/resvg-js": "^2.6.2",
+    "@resvg/resvg-js-win32-x64-msvc": "2.6.2",
+    "@types/node": "^22.10.7",
+    "@vitejs/plugin-vue": "^5.2.1",
+    "@vitest/coverage-v8": "^2.1.8",
+    "@vue/test-utils": "^2.4.6",
+    "esbuild": "0.25.12",
+    "eslint": "^9.18.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-vue": "^9.32.0",
+    "husky": "^9.1.7",
+    "jsdom": "^25.0.1",
+    "lighthouse": "^12.3.0",
+    "lint-staged": "^15.3.0",
+    "prettier": "^3.4.2",
+    "rollup": "4.67.2",
+    "typescript": "~5.7.3",
+    "typescript-eslint": "^8.20.0",
+    "vite": "^6.0.7",
+    "vitest": "^2.1.8",
+    "vue-eslint-parser": "^9.4.3",
+    "vue-tsc": "^2.2.0"
+  },
+  "lint-staged": {
+    "*.{ts,vue}": [
+      "eslint --fix --max-warnings 0",
+      "prettier --write"
+    ],
+    "*.{css,json,md}": [
+      "prettier --write"
+    ]
+  }
+}

@@ -49,6 +49,11 @@ import cityCulture from './img/city-culture.svg'
 import cityLife from './img/city-life.svg'
 import serviceHero from './img/service-hero.svg'
 import trafficHero from './img/traffic-hero.svg'
+import cityHero from './img/city-hero.svg'
+import cultureHero from './img/culture-hero.svg'
+import scenicHero from './img/scenic-hero.svg'
+import guidesHero from './img/guides-hero.svg'
+import foodHero from './img/food-hero.svg'
 
 export const images = {
   hero1,
@@ -97,6 +102,11 @@ export const images = {
   cityLife,
   serviceHero,
   trafficHero,
+  cityHero,
+  cultureHero,
+  scenicHero,
+  guidesHero,
+  foodHero,
 } as const
 
 export type ImageKey = keyof typeof images

@@ -52,7 +52,7 @@ function reset() {
       kicker="SCENIC SPOTS"
       title="十大经典景区，&#10;一步一景入画来"
       desc="从两千年的水利奇迹，到竹林深处的国宝、红墙下的竹影——成都的景区，是可以慢慢走、慢慢看的。"
-      :img="images.scenicJinLi"
+      :img="images.scenicHero"
       img-alt="锦里古街夜色：灯笼与青瓦"
       :breadcrumb="[{ label: '首页', to: '/' }, { label: '经典景区' }]"
     />

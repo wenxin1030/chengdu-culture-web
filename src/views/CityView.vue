@@ -23,7 +23,7 @@ useSeo({
       kicker="ABOUT CHENGDU"
       title="三千年城名未改，&#10;一座活着的天府"
       desc="成都，简称「蓉」，别称锦官城、芙蓉城。它的城市轴线三千年未移，城名两千余年未改——这在中国城市史上极为罕见。"
-      :img="images.cityHistory"
+      :img="images.cityHero"
       img-alt="成都历史意象：晨雾中的川西林盘与远山"
     />
 

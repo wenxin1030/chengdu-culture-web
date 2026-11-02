@@ -55,6 +55,12 @@ withDefaults(
   inset: 0;
   background: linear-gradient(105deg, rgba(9, 26, 22, 0.82) 0%, rgba(9, 26, 22, 0.55) 52%, rgba(9, 26, 22, 0.2) 100%);
 }
+.bg :deep(.smart-image) {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: auto;
+  border-radius: 0;
+}
 .inner {
   position: relative;
   padding: clamp(2.5rem, 6vw, 5rem) var(--space-5);

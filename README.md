@@ -123,7 +123,7 @@ city-web/
 | 指标 | 结果 |
 | --- | --- |
 | 单元测试 | 8 个文件 / 44 条断言，全部通过 |
-| 端到端测试 | 4 个文件 / 16 条用例 × 2 形态，全部通过 |
+| 端到端测试 | 4 个文件 / 16 条用例 × 5 形态（Edge 桌面/移动、Firefox 桌面、WebKit 桌面/移动）= 80 次执行，全部通过 |
 | Lighthouse 性能（桌面） | 99（列表页）/ 87（首页） |
 | Lighthouse 可访问性 | 95 ~ 100 |
 | Lighthouse SEO | 100 |
@@ -151,6 +151,17 @@ city-web/
 | [部署与 CI 说明](docs/12-部署与CI说明.md) | 构建产物、部署方案、流水线 |
 | [项目复盘报告](docs/13-项目复盘报告.md) | 目标达成、问题与改进 |
 | [分工与 PR 记录](docs/分工与PR记录.md) | 成员分工、7 个 PR 记录、例会纪要 |
+| [GitHub 部署与 Actions 实操](docs/14-GitHub部署与Actions实操.md) | 建仓库、push、开 Actions、Pages、线上审计、跨浏览器 |
+
+## 六点五、部署到 GitHub Pages
+
+1. 在 GitHub 新建 **Public** 仓库（不要初始化 README/gitignore）；
+2. `git remote add origin <仓库地址> && git push -u origin main && git push origin develop && git push --tags`；
+3. Settings → Pages → Source 选 **GitHub Actions**；
+4. 推送 `main` 后自动部署，地址为 `https://<user>.github.io/<repo>/`（`BASE_PATH` 由 workflow 自动注入，无需改代码）；
+5. 拿到地址后 `set LH_BASE=https://... && node scripts/lighthouse.mjs` 复跑审计。
+
+完整步骤与排错见 [GitHub 部署与 Actions 实操](docs/14-GitHub部署与Actions实操.md)。
 
 ## 七、浏览器兼容
 

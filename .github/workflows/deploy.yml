@@ -35,8 +35,10 @@ jobs:
           # 部署在 <user>.github.io/<repo>/ 时使用子路径
           BASE_PATH: /${{ github.event.repository.name }}/
 
-      - name: SPA fallback
-        run: cp dist/index.html dist/404.html
+      - name: SPA fallback & .nojekyll
+        run: |
+          cp dist/index.html dist/404.html
+          touch dist/.nojekyll
 
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3

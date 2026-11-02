@@ -76,6 +76,7 @@ jobs:
         run: pnpm exec playwright test --project=desktop-edge
         env:
           PLAYWRIGHT_CHANNEL: chromium
+          CI: 'true'
 
       - name: Upload report
         if: always()

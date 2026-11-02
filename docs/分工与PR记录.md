@@ -37,7 +37,7 @@ feature/*       ●  ●  ●  ●  ●  ●  ●   （每个 PR 一条分支，
 | #3 | feature/smart-module | 天气接口、搜索索引、Pinia、组合式函数 | 刘、周 | merge: 合入智能化模块与状态管理 | 已合并 |
 | #4 | feature/ui-kit | 13 个公共组件与导航元数据 | 陈、吴 | merge: 合入公共组件库与导航配置 | 已合并 |
 | #5 | feature/pages | 八大板块页面、详情页、路由与应用外壳 | 张、王 | merge: 合入八大业务页面与路由 | 已合并 |
-| #6 | feature/qa | 44 条单测、32 条 E2E、Lighthouse 优化 | 李、赵 | merge: 合入测试与质量审计 | 已合并 |
+| #6 | feature/qa | 44 条单测、80 次 E2E 执行、Lighthouse 优化 | 李、赵 | merge: 合入测试与质量审计 | 已合并 |
 | #7 | feature/docs | 全套交付文档与报告 | 全体 | merge: 合入项目文档与小组报告 | 已合并 |
 
 ### 评审关注点（每轮必查）

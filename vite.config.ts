@@ -5,6 +5,8 @@ import vue from '@vitejs/plugin-vue'
 
 // https://vite.dev/config/
 export default defineConfig({
+  // GitHub Pages 部署在 <user>.github.io/<repo>/ 时，用 BASE_PATH=/<repo>/ 构建
+  base: process.env.BASE_PATH || '/',
   plugins: [vue()],
   resolve: {
     alias: {

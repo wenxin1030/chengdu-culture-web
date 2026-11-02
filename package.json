@@ -24,7 +24,8 @@
     "test:e2e": "playwright test",
     "test:e2e:report": "playwright show-report",
     "lighthouse": "node scripts/lighthouse.mjs",
-    "prepare": "husky"
+    "prepare": "husky",
+    "postinstall": "node scripts/fix-hoisting.mjs"
   },
   "dependencies": {
     "pinia": "^2.3.1",

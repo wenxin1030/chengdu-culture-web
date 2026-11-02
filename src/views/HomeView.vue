@@ -26,7 +26,7 @@ import { guides } from '@/data/guides'
 import { cityStats, cityTraits } from '@/data/city'
 
 useSeo({
-  title: () => '天府成都 · 锦官城文化宣传网',
+  title: () => '',
   description: () =>
     '走进成都：三千年城名未改的天府之国。城市介绍、文化活动、十大经典景区、游记攻略、特色美食与交通路线一站直达。',
   keywords: () => '成都,天府之国,成都旅游,熊猫基地,都江堰,川剧变脸,成都美食,成都攻略',
@@ -298,12 +298,18 @@ const sideItems = [
   border-color: var(--color-brand-200);
 }
 .t-icon {
-  font-size: 1.6rem;
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-gold-600);
 }
 .traits h3 {
-  margin: var(--space-3) 0 var(--space-2);
+  margin: var(--space-2) 0 var(--space-2);
   font-family: var(--font-serif);
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   color: var(--color-text-strong);
 }
 .traits p {

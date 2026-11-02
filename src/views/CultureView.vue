@@ -62,7 +62,7 @@ const maxCount = computed(() => Math.max(1, ...months.value.map((m) => m.count))
       kicker="CULTURE EVENTS"
       title="一年十二个月，&#10;成都都有热闹可赶"
       desc="灯会与大庙会开启新年，春天有糖酒会与花季，夏天赛龙舟，秋天办音乐节与非遗节，冬天泡一场温泉。"
-      :img="images.cultureDeng"
+      :img="images.cultureHero"
       img-alt="成都灯会：夜色中的彩灯"
       :breadcrumb="[{ label: '首页', to: '/' }, { label: '文化活动' }]"
     />

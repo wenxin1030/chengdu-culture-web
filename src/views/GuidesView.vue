@@ -59,7 +59,7 @@ function reset() {
       kicker="TRAVEL GUIDES"
       title="读一篇攻略，&#10;再出发"
       desc="这些路线都按真实步行与换乘时间核算过：几天走几处、预算多少、雨天备选是什么，写清楚再出发。"
-      :img="images.guide3Days"
+      :img="images.guidesHero"
       img-alt="成都三日游攻略封面：山水与城市"
       :breadcrumb="[{ label: '首页', to: '/' }, { label: '游记攻略' }]"
     />

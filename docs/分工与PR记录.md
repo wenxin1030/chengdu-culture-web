@@ -7,7 +7,7 @@
 | 成员 | 学号 | 角色 | 负责模块 | 主要产出 |
 | --- | --- | --- | --- | --- |
 | 组员 A | 2024xxxxxx | 组长 / 前端架构 | 工程基座、路由、状态管理、构建部署、代码评审 | vite/ts/eslint 配置、router、stores、CI、评审意见 |
-| 组员 B | 2024xxxxxx | 视觉与交互 | 设计令牌、46 张 SVG、组件库、动效与无障碍 | tokens.css / aliases.css、generate-art.mjs、components/common |
+| 组员 B | 2024xxxxxx | 视觉与交互 | 设计令牌、51 张 SVG、组件库、动效与无障碍 | tokens.css / aliases.css、generate-art.mjs、components/common |
 | 组员 C | 2024xxxxxx | 业务开发 | 八大板块页面、筛选与详情页、响应式 | views/*.vue、FilterBar、cards |
 | 组员 D | 2024xxxxxx | 智能化与测试 | 智能问答、全站搜索、推荐、单测与 E2E、Lighthouse 优化 | stores/chat、api/search、utils/search、tests/*、lighthouse.mjs |
 
@@ -32,13 +32,14 @@ feature/*       ●  ●  ●  ●  ●  ●  ●   （每个 PR 一条分支，
 
 | PR | 分支 | 标题 | 评审人 | 合并提交说明 | 状态 |
 | --- | --- | --- | --- | --- | --- |
-| #1 | feature/design-system | 设计令牌、基础样式与 46 张程序化 SVG | 张、李 | merge: 合入设计系统与视觉资源 | 已合并 |
+| #1 | feature/design-system | 设计令牌、基础样式与 51 张程序化 SVG | 张、李 | merge: 合入设计系统与视觉资源 | 已合并 |
 | #2 | feature/data-layer | 领域模型、文旅数据集、工具函数 | 王、赵 | merge: 合入数据层与工具函数 | 已合并 |
 | #3 | feature/smart-module | 天气接口、搜索索引、Pinia、组合式函数 | 刘、周 | merge: 合入智能化模块与状态管理 | 已合并 |
 | #4 | feature/ui-kit | 13 个公共组件与导航元数据 | 陈、吴 | merge: 合入公共组件库与导航配置 | 已合并 |
 | #5 | feature/pages | 八大板块页面、详情页、路由与应用外壳 | 张、王 | merge: 合入八大业务页面与路由 | 已合并 |
 | #6 | feature/qa | 44 条单测、80 次 E2E 执行、Lighthouse 优化 | 李、赵 | merge: 合入测试与质量审计 | 已合并 |
 | #7 | feature/docs | 全套交付文档与报告 | 全体 | merge: 合入项目文档与小组报告 | 已合并 |
+| #8 | feature/art-refresh | 51 张对应条目的插画重绘、5 张 21:7 内页横幅与接线 | 张、李 | merge: 合入插画重绘与内页横幅 | 已合并 |
 
 ### 评审关注点（每轮必查）
 
@@ -51,6 +52,8 @@ feature/*       ●  ●  ●  ●  ●  ●  ●   （每个 PR 一条分支，
 ## 3. 实际提交历史（节选）
 
 ```text
+*   release: v1.2.0 插画重绘与内页横幅
+*   merge: 合入插画重绘与内页横幅（PR #8）
 *   release: v1.0.0 成都文化宣传网站首次完整交付
 *   merge: 合入项目文档与小组报告（PR #7）
 *   merge: 合入测试与质量审计（PR #6）
@@ -62,7 +65,7 @@ feature/*       ●  ●  ●  ●  ●  ●  ●   （每个 PR 一条分支，
 * chore: 初始化 Vue3 + Vite + TypeScript 工程基座
 ```
 
-完整历史见 `git log --graph --oneline --all`（27 个提交）。
+完整历史见 `git log --graph --oneline --all`（30 个提交）。
 
 ## 4. 例会记录
 

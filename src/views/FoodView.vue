@@ -63,7 +63,7 @@ const eatingTips = [
       kicker="CHENGDU FOOD"
       title="世界美食之都，&#10;一口入魂"
       desc="红汤翻滚的火锅、数签签的串串、一勺芽菜肉臊的担担面——成都的美食，是把日子过成滋味。"
-      :img="images.hero3"
+      :img="images.foodHero"
       img-alt="成都夜色中的灯笼与美食街"
       :breadcrumb="[{ label: '首页', to: '/' }, { label: '特色美食' }]"
     />

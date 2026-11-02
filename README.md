@@ -22,7 +22,7 @@
 | 端到端 | Playwright 1.64（本机 Edge） | 16 条用例 × 桌面/移动两种形态 |
 | 质量 | ESLint 9（flat config）+ Prettier 3 + vue-tsc | 提交即校验 |
 | 审计 | Lighthouse 12 | 性能/可访问性/最佳实践/SEO |
-| 视觉资源 | 程序化生成 SVG（46 张） | 不依赖任何外部图床与字体，离线可用 |
+| 视觉资源 | 程序化生成 SVG（51 张） | 不依赖任何外部图床与字体，离线可用 |
 
 > ⚠️ 所有 pnpm 命令都必须在本目录（`city-web/`）内执行；在工作区根目录执行会得到 `ERR_PNPM_RECURSIVE_EXEC_NO_PACKAGE`（根目录没有 package.json）。
 
@@ -67,14 +67,14 @@ node scripts/check-browser.mjs
 city-web/
 ├─ public/                     # favicon、robots.txt、sitemap.xml
 ├─ scripts/
-│  ├─ generate-art.mjs         # 程序化生成 46 张水墨风 SVG
+│  ├─ generate-art.mjs         # 程序化生成 51 张水墨风 SVG
 │  ├─ preview-art.mjs          # SVG → PNG 预览（resvg）
 │  ├─ lighthouse.mjs           # 性能/可访问性审计
 │  └─ capture-shots.mjs        # 关键页面截图 + 横向溢出检测
 ├─ src/
 │  ├─ api/                     # contentApi（模拟后端）、weather（open-meteo）、search（搜索索引）
 │  ├─ assets/
-│  │  ├─ img/                  # 46 张 SVG
+│  │  ├─ img/                  # 51 张 SVG
 │  │  ├─ images.ts             # 资源注册表（带 hash 指纹）
 │  │  └─ styles/               # tokens / aliases / base / utilities
 │  ├─ components/
@@ -172,7 +172,7 @@ Chrome / Edge / Firefox / Safari 最新两个大版本。使用了 `color-mix()`
 | 成员 | 角色 | 主要工作 |
 | --- | --- | --- |
 | 组员 A（组长） | 前端架构 | 工程基座、路由与状态管理、构建与部署、代码评审 |
-| 组员 B | 视觉与交互 | 设计令牌、46 张程序化 SVG、组件库、动效与无障碍 |
+| 组员 B | 视觉与交互 | 设计令牌、51 张程序化 SVG、组件库、动效与无障碍 |
 | 组员 C | 业务开发 | 八个板块页面、筛选与详情页、响应式适配 |
 | 组员 D | 智能化与测试 | 智能问答、全站搜索、推荐算法、单元与 E2E 测试、Lighthouse 优化 |
 

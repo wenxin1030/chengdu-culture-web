@@ -1239,29 +1239,77 @@ function pavilion(x, y, w, color, pal) {
   return s
 }
 
+function boat(x, y, s, pal) {
+  let out = ''
+  out += P('M' + n(x - s * 0.5) + ' ' + n(y) + ' Q' + n(x - s * 0.3) + ' ' + n(y + s * 0.3) + ' ' + n(x) + ' ' + n(y + s * 0.32)
+    + ' Q' + n(x + s * 0.3) + ' ' + n(y + s * 0.3) + ' ' + n(x + s * 0.5) + ' ' + n(y)
+    + ' Q' + n(x) + ' ' + n(y + s * 0.08) + ' ' + n(x - s * 0.5) + ' ' + n(y) + ' Z', pal.ink)
+  out += P('M' + n(x - s * 0.22) + ' ' + n(y + s * 0.02) + ' Q' + n(x) + ' ' + n(y - s * 0.34) + ' ' + n(x + s * 0.22) + ' ' + n(y + s * 0.02) + ' Z', pal.ink2)
+  out += S('M' + n(x - s * 0.18) + ' ' + n(y) + ' Q' + n(x) + ' ' + n(y - s * 0.2) + ' ' + n(x + s * 0.18) + ' ' + n(y), pal.paper, 1.6, ' opacity="0.35"')
+  out += L(x + s * 0.34, y, x + s * 0.34, y - s * 0.36, pal.ink, 1.6)
+  out += R(x - s * 0.42, y + s * 0.42, s * 0.84, 2, pal.paper, ' opacity="0.2"')
+  return out
+}
+
+function thickBamboo(x, y, height, color, count) {
+  let out = ''
+  const k = count || 4
+  for (let i = 0; i < k; i++) {
+    const off = i - (k - 1) / 2
+    const bx = x + off * height * 0.08
+    const hh = height * (0.76 + (i % 3) * 0.14)
+    out += L(bx, y, bx + off * height * 0.02, y - hh, color, height * 0.008 + 1.4)
+    for (let j = 1; j <= 4; j++) {
+      const ny = y - hh * (j / 5)
+      out += L(bx - 5, ny, bx + 5, ny, color, 1.8, ' opacity="0.8"')
+    }
+    const leaf = (lx, ly, dir, len) => {
+      const tipX = lx + dir * len * 0.92
+      const tipY = ly - len * 0.62
+      return P('M' + n(lx) + ' ' + n(ly)
+        + ' Q' + n(lx + dir * len * 0.34) + ' ' + n(ly - len * 0.06) + ' ' + n(tipX) + ' ' + n(tipY)
+        + ' Q' + n(lx + dir * len * 0.55) + ' ' + n(ly - len * 0.5) + ' ' + n(lx) + ' ' + n(ly) + ' Z', color, ' opacity="0.85"')
+    }
+    for (let j = 0; j < 3; j++) {
+      const ly = y - hh * (0.56 + j * 0.14)
+      const dir = (i + j) % 2 === 0 ? 1 : -1
+      const len = height * (0.1 + (j % 2) * 0.035)
+      out += L(bx, ly, bx + dir * len * 0.34, ly - len * 0.1, color, 2.2)
+      out += leaf(bx + dir * len * 0.3, ly - len * 0.1, dir, len)
+      out += leaf(bx + dir * len * 0.3, ly - len * 0.1, -dir, len * 0.52)
+      out += leaf(bx + dir * len * 0.3, ly - len * 0.16, dir, len * 0.6)
+    }
+    out += leaf(bx, y - hh * 0.98, i % 2 === 0 ? 1 : -1, height * 0.07)
+    out += leaf(bx, y - hh * 0.94, i % 2 === 0 ? -1 : 1, height * 0.055)
+  }
+  return out
+}
+
 function heroOne(w, h, pal, rnd) {
   let s = ''
   // 远处雪山
   s += P(peakPath(w * 0.62, h * 0.62, w * 0.34, h * 0.3), pal.ink3, ' opacity="0.45"')
-  s += P(peakPath(w * 0.78, h * 0.62, w * 0.3, h * 0.24), pal.ink3, ' opacity="0.35"')
+  s += P(peakPath(w * 0.8, h * 0.62, w * 0.3, h * 0.24), pal.ink3, ' opacity="0.35"')
   s += P('M' + n(w * 0.7) + ' ' + n(h * 0.32) + ' L' + n(w * 0.76) + ' ' + n(h * 0.43) + ' L' + n(w * 0.66) + ' ' + n(h * 0.43) + ' Z', '#ffffff', ' opacity="0.5"')
+  // 远岸塔影
+  s += pagoda(w * 0.555, h * 0.7, h * 0.15, pal.ink3)
   // 河岸
   s += P('M0 ' + n(h * 0.66) + ' Q' + n(w * 0.3) + ' ' + n(h * 0.62) + ' ' + n(w * 0.55) + ' ' + n(h * 0.67) + ' T' + n(w) + ' ' + n(h * 0.64) + ' L' + n(w) + ' ' + n(h) + ' L0 ' + n(h) + ' Z', pal.ink, ' opacity="0.5"')
   // 合江亭
-  s += pavilion(w * 0.62, h * 0.74, w * 0.12, pal.ink, pal)
-  s += R(w * 0.55, h * 0.72, w * 0.13, h * 0.03, pal.ink2)
-  // 竹
-  s += bamboo(w * 0.1, h * 0.92, h * 0.42, pal.ink, 5)
-  s += bamboo(w * 0.17, h * 0.93, h * 0.34, pal.ink, 4)
-  s += bamboo(w * 0.045, h * 0.94, h * 0.28, pal.ink, 3)
-  // 小舟
-  s += P('M' + n(w * 0.34) + ' ' + n(h * 0.79) + ' q' + n(w * 0.045) + ' ' + n(h * 0.02) + ' ' + n(w * 0.09) + ' 0 q' + n(-w * 0.045) + ' ' + n(h * 0.022) + ' ' + n(-w * 0.09) + ' 0 Z', pal.ink)
-  s += L(w * 0.385, h * 0.7, w * 0.385, h * 0.79, pal.ink, 1.6)
-  s += P('M' + n(w * 0.385) + ' ' + n(h * 0.72) + ' q' + n(w * 0.02) + ' ' + n(h * 0.03) + ' 0 ' + n(h * 0.05) + ' Z', pal.paper, ' opacity="0.7"')
+  s += pavilion(w * 0.7, h * 0.77, w * 0.16, pal.ink, pal)
+  s += R(w * 0.6, h * 0.748, w * 0.2, h * 0.028, pal.ink2)
+  s += R(w * 0.63, h * 0.785, w * 0.14, 3, pal.paper, ' opacity="0.14"')
   // 江面横纹
-  for (let i = 0; i < 8; i++) {
-    s += R(w * (0.05 + rnd() * 0.5), h * (0.8 + i * 0.022), w * (0.08 + rnd() * 0.22), 2, pal.paper, ' opacity="0.18"')
+  for (let i = 0; i < 10; i++) {
+    s += R(w * (0.3 + rnd() * 0.62), h * (0.775 + i * 0.021), w * (0.08 + rnd() * 0.2), 2, pal.paper, ' opacity="0.16"')
   }
+  // 小舟两只
+  s += boat(w * 0.46, h * 0.79, w * 0.065, pal)
+  s += boat(w * 0.6, h * 0.84, w * 0.045, pal)
+  // 右侧前景竹丛（画面右缘取景框）
+  s += thickBamboo(w * 0.9, h * 1.04, h * 0.58, pal.ink, 4)
+  s += thickBamboo(w * 0.965, h * 1.06, h * 0.44, pal.ink, 3)
+  s += thickBamboo(w * 0.055, h * 1.06, h * 0.34, pal.ink, 2)
   return s
 }
 

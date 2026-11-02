@@ -212,13 +212,18 @@ h1 {
   align-items: flex-start;
   gap: 0.4rem;
   font-size: var(--fs-sm);
-  color: rgba(247, 244, 236, 0.8);
+  color: rgba(247, 244, 236, 0.95);
+  /* 主视觉亮度不均，加投影保证小字号可读 */
+  text-shadow: 0 1px 10px rgba(6, 20, 18, 0.55);
 }
 .level {
-  padding: 0.15em 0.7em;
-  border: 1px solid rgba(247, 244, 236, 0.45);
+  padding: 0.18em 0.75em;
+  border: 1px solid rgba(247, 244, 236, 0.5);
   border-radius: 999px;
+  background: rgba(11, 28, 26, 0.5);
   font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: 0.02em;
 }
 .body {
   display: grid;

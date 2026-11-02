@@ -22,7 +22,9 @@ function upsertMeta(attr: 'name' | 'property', key: string, content: string) {
 }
 
 export function applySeo(options: SeoOptions): void {
-  const title = options.title ? options.title + ' · ' + SITE_NAME : SITE_NAME
+  // 传入完整站名时不再重复拼接后缀（首页即用站名作标题）
+  const raw = (options.title || '').trim()
+  const title = !raw ? SITE_NAME : raw.includes(SITE_NAME) ? raw : raw + ' · ' + SITE_NAME
   const description = options.description || DEFAULT_DESC
   document.title = title
   upsertMeta('name', 'description', description)

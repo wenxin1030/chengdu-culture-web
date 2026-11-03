@@ -1,9 +1,5 @@
 # 天府成都 · 锦官城文化宣传网
 
-> 《Web 智能化》（课程编码 100904511）第二次小组任务 —— 成都文化宣传网站设计
-> 24 级人工智能专业 · 第 12 组　指导教师：霍明
-> 小组成员：文欣（组长）、张宁、林泊、李艾、范焦珂、许嘉梦、韩忻博
-
 一个以「天府墨韵」为视觉主题的成都文化宣传网站，覆盖**宣传主页、城市介绍、文化活动、城市服务、经典景区、游记攻略、特色美食、交通路线**八个板块，并内置**智能问答、全站智能搜索、智能推荐**三类智能化能力。
 
 ![首页](https://img.shields.io/badge/Vue-3.5-42b883) ![Vite](https://img.shields.io/badge/Vite-6.4-646cff) ![TypeScript](https://img.shields.io/badge/TypeScript-5.7-3178c6) ![Tests](https://img.shields.io/badge/tests-44%20unit%20%2B%2080%20e2e-brightgreen) ![Lighthouse](https://img.shields.io/badge/Lighthouse-99%20%2F%2095%2B-success)
@@ -151,10 +147,9 @@ city-web/
 | [缺陷清单](docs/11-缺陷清单.md) | 缺陷、等级、修复提交 |
 | [部署与 CI 说明](docs/12-部署与CI说明.md) | 构建产物、部署方案、流水线 |
 | [项目复盘报告](docs/13-项目复盘报告.md) | 目标达成、问题与改进 |
-| [分工与 PR 记录](docs/分工与PR记录.md) | 成员分工、7 个 PR 记录、例会纪要 |
 | [GitHub 部署与 Actions 实操](docs/14-GitHub部署与Actions实操.md) | 建仓库、push、开 Actions、Pages、线上审计、跨浏览器 |
 
-## 六点五、部署到 GitHub Pages
+## 七、部署上线（GitHub Pages）
 
 1. 在 GitHub 新建 **Public** 仓库（不要初始化 README/gitignore）；
 2. `git remote add origin <仓库地址> && git push -u origin main && git push origin develop && git push --tags`；
@@ -164,20 +159,6 @@ city-web/
 
 完整步骤与排错见 [GitHub 部署与 Actions 实操](docs/14-GitHub部署与Actions实操.md)。
 
-## 七、浏览器兼容
+## 八、浏览器兼容
 
 Chrome / Edge / Firefox / Safari 最新两个大版本。使用了 `color-mix()`、`dvh`、`aspect-ratio`、`backdrop-filter`、`clamp()` 等现代特性，均已在目标浏览器原生支持；对 `backdrop-filter` 做了降级（无该属性时仍有半透明底色）。
-
-## 八、小组分工
-
-| 成员 | 角色 | 主要工作 |
-| --- | --- | --- |
-| 文欣（组长） | 前端架构 | 项目统筹、工程基座、路由与状态管理、构建与部署、代码评审 |
-| 张宁 | 视觉与交互 | 设计令牌、51 张程序化 SVG、公共组件库、动效与无障碍 |
-| 林泊 | 数据层 | 八大板块文旅数据集、领域模型、搜索打分与工具函数 |
-| 李艾 | 业务开发 | 八个板块页面、筛选与详情页、响应式适配 |
-| 范焦珂 | 智能化 | 智能问答、全站搜索、推荐算法、天气接口与缓存 |
-| 许嘉梦 | 测试与质量 | 44 条单元测试、80 次跨浏览器 E2E、Lighthouse 审计与缺陷闭环 |
-| 韩忻博 | 文档与答辩 | 14 份过程文档、小组任务报告、答辩 PPT |
-
-> 学号一栏请在 [docs/分工与PR记录.md](docs/分工与PR记录.md) 中自行填写（交作业前记得补齐）。

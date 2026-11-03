@@ -21,7 +21,6 @@ const year = new Date().getFullYear()
           以「天府墨韵」为视觉主线，用一座城的山水、街巷与人情，讲述成都三千年不改名的故事。
           本站为《Web 智能化》课程小组任务作品，内容仅供学习交流。
         </p>
-        <p class="badge">课程：Web 智能化 · 24 级人工智能 · 第 12 组</p>
       </div>
 
       <nav class="col" aria-label="页脚栏目导航">
@@ -107,11 +106,6 @@ const year = new Date().getFullYear()
   font-size: var(--fs-sm);
   line-height: 1.9;
   max-width: 42ch;
-}
-.badge {
-  margin: 0;
-  font-size: var(--fs-xs);
-  color: var(--color-text-faint);
 }
 .col h3 {
   margin: 0 0 var(--space-3);

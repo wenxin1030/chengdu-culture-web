@@ -6,7 +6,7 @@
 
 一个以「天府墨韵」为视觉主题的成都文化宣传网站，覆盖**宣传主页、城市介绍、文化活动、城市服务、经典景区、游记攻略、特色美食、交通路线**八个板块，并内置**智能问答、全站智能搜索、智能推荐**三类智能化能力。
 
-![首页](https://img.shields.io/badge/Vue-3.5-42b883) ![Vite](https://img.shields.io/badge/Vite-6.4-646cff) ![TypeScript](https://img.shields.io/badge/TypeScript-5.7-3178c6) ![Tests](https://img.shields.io/badge/tests-44%20unit%20%2B%2032%20e2e-brightgreen) ![Lighthouse](https://img.shields.io/badge/Lighthouse-99%20%2F%2095%2B-success)
+![首页](https://img.shields.io/badge/Vue-3.5-42b883) ![Vite](https://img.shields.io/badge/Vite-6.4-646cff) ![TypeScript](https://img.shields.io/badge/TypeScript-5.7-3178c6) ![Tests](https://img.shields.io/badge/tests-44%20unit%20%2B%2080%20e2e-brightgreen) ![Lighthouse](https://img.shields.io/badge/Lighthouse-99%20%2F%2095%2B-success)
 
 ---
 
@@ -20,7 +20,7 @@
 | 状态 | Pinia 2 | `app`（主题/收藏/搜索历史）、`weather`、`chat` |
 | 样式 | 原生 CSS + 设计令牌 | 两层变量（调色板 → 语义 token → 组件别名），零 UI 框架依赖 |
 | 测试 | Vitest 2 + @vue/test-utils | 44 条单元断言 |
-| 端到端 | Playwright 1.64（本机 Edge） | 16 条用例 × 桌面/移动两种形态 |
+| 端到端 | Playwright 1.64（Edge / Firefox / WebKit） | 16 条用例 × 5 种形态 = 80 次执行 |
 | 质量 | ESLint 9（flat config）+ Prettier 3 + vue-tsc | 提交即校验 |
 | 审计 | Lighthouse 12 | 性能/可访问性/最佳实践/SEO |
 | 视觉资源 | 程序化生成 SVG（51 张） | 不依赖任何外部图床与字体，离线可用 |
